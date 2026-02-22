@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pretendard', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            width: 320px;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+        }
+
+        select {
+            background: rgba(255,255,255,0.9);
+        }
+
+        button {
+            background: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #f0f0f0;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>도시 선택</h2>
+
+    <form method="POST">
+        <select name="city" required>
+            <option value="">-- 도시를 선택하세요 --</option>
+            <option>서울</option>
+            <option>부산</option>
+            <option>대구</option>
+            <option>인천</option>
+            <option>광주</option>
+            <option>대전</option>
+            <option>울산</option>
+            <option>제주도</option>
+            <option>강원도</option>
+        </select>
+
+        <button type="submit">날씨 확인</button>
+    </form>
+</div>
+
+</body>
+</html>

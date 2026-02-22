@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pretendard', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s ease;
+        }
+
+        {% if t >= 30 %}
+            body { background: linear-gradient(135deg, #ff6a00, #ee0979); }
+        {% elif t >= 20 %}
+            body { background: linear-gradient(135deg, #36d1dc, #5b86e5); }
+        {% elif t >= 10 %}
+            body { background: linear-gradient(135deg, #11998e, #38ef7d); }
+        {% else %}
+            body { background: linear-gradient(135deg, #4e54c8, #8f94fb); }
+        {% endif %}
+
+        .card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            padding: 60px 80px;
+            border-radius: 30px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease;
+        }
+
+        .temp {
+            font-size: 90px;
+            font-weight: 700;
+        }
+
+        .back {
+            margin-top: 25px;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .back:hover {
+            opacity: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="temp">
+        {{ t }}°C
+    </div>
+
+    <a href="{{ url_for('search') }}" class="back">
+        ← 다시 검색
+    </a>
+</div>
+
+</body>
+</html>
