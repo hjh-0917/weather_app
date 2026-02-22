@@ -2,8 +2,8 @@ from flask import Flask,request, render_template, redirect, url_for
 import requests
 from dotenv import load_dotenv
 load_dotenv()
-from api_file import api_key
-
+import os
+api_key = os.environ.get("api_key")
 city_dic = {"서울":"Seoul","부산":"Busan","대구":"Daegu","인천":"Incheon","광주":"Gwangju","대전":"Daejeon","울산":"Ulsan","제주도":"Jeju","강원도":"Gangwon-do"}
 
 app = Flask(__name__)
